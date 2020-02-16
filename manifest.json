@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "Medium Focus Extension",
+  "description": "This extension blocks your Medium feed so that you don't get distracted every time you open Medium",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": ["https://medium.com/"],
+      "js": ["popup.js"]
+    }
+  ],
+  "permissions": ["activeTab"]
+}
